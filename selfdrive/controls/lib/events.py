@@ -312,10 +312,10 @@ EVENTS: Dict[int, Dict[str, Union[Alert, Callable[[Any, messaging.SubMaster, boo
 
   EventName.visiononlyWarning: {
     ET.PERMANENT: Alert(
-      "Vision Only, Stock AEB/SCC Disabled",
-      "Be Cautious",
+      "don't let your memes be dreams",
+      "Vision Only",
       AlertStatus.userPrompt, AlertSize.small,
-      Priority.LOW, VisualAlert.none, AudibleAlert.chimeDingRepeat, 1., 2., 15.),
+      Priority.LOW, VisualAlert.none, AudibleAlert.none, 1., 2., 15.),
   },
 
   # ********** events only containing alerts that display while engaged **********
