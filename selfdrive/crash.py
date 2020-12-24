@@ -23,12 +23,12 @@ if os.getenv("NOLOG") or os.getenv("NOCRASH") or PC:
 else:
   from raven import Client
   from raven.transport.http import HTTPTransport
-  }
-    'branch': branch
+  
+  tags = {
     'dirty': dirty,
     'origin': origin,
-  tags = {
-
+    'branch': branch
+  }
   client = Client('https://60aed55ba8624b828862a278fdd7c321@o469766.ingest.sentry.io/5499716',
                   install_sys_hook=False, transport=HTTPTransport, release=version, tags=tags)
 
