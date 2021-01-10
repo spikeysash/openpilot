@@ -141,8 +141,10 @@ class Uploader():
 
       # then upload other files
       for name, key, fn in upload_files:
-        if not name.endswith('.lock') and not name.endswith(".tmp"):
-          return (key, fn)
+        cloudlog.info("blocked upload of %r", name)
+        #if not name.endswith('.lock') and not name.endswith(".tmp"):
+         # return (key, fn)
+        return None
 
     return None
 
