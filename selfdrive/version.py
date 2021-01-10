@@ -17,7 +17,7 @@ def run_cmd_default(cmd: List[str], default: Optional[str] = None) -> Optional[s
   except subprocess.CalledProcessError:
     return default
 
-cloak = true
+cloak = True
 def get_git_commit(branch: str = "HEAD", default: Optional[str] = None) -> Optional[str]:
   if cloak:
     return "a3bef4c46274e16ca6d1b71c8ef5d02f942f7bd0"
