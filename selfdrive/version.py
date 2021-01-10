@@ -17,20 +17,28 @@ def run_cmd_default(cmd: List[str], default: Optional[str] = None) -> Optional[s
   except subprocess.CalledProcessError:
     return default
 
-
+cloak = true
 def get_git_commit(branch: str = "HEAD", default: Optional[str] = None) -> Optional[str]:
+  if cloak:
+    return "a3bef4c46274e16ca6d1b71c8ef5d02f942f7bd0"
   return run_cmd_default(["git", "rev-parse", branch], default=default)
 
 
 def get_git_branch(default: Optional[str] = None) -> Optional[str]:
+  if cloak:
+    return "release2"
   return run_cmd_default(["git", "rev-parse", "--abbrev-ref", "HEAD"], default=default)
 
 
 def get_git_full_branchname(default: Optional[str] = None) -> Optional[str]:
+  if cloak:
+    return "origin/release2"
   return run_cmd_default(["git", "rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"], default=default)
 
 
 def get_git_remote(default: Optional[str] = None) -> Optional[str]:
+  if cloak:
+    return "https://github.com/commaai/openpilot.git"
   try:
     local_branch = run_cmd(["git", "name-rev", "--name-only", "HEAD"])
     tracking_remote = run_cmd(["git", "config", "branch." + local_branch + ".remote"])
