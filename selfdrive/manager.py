@@ -440,7 +440,7 @@ def manager_thread():
   cloudlog.info({"environ": os.environ})
 
   # save boot log
-  #subprocess.call(["./loggerd", "--bootlog"], cwd=os.path.join(BASEDIR, "selfdrive/loggerd"))
+  subprocess.call(["./loggerd", "--bootlog"], cwd=os.path.join(BASEDIR, "selfdrive/loggerd"))
 
   # start daemon processes
   for p in daemon_processes:
@@ -480,7 +480,7 @@ def manager_thread():
         else:
           start_managed_process(p)
     else:
-      logger_dead = True
+      logger_dead = False
       driver_view = params.get("IsDriverViewEnabled") == b"1"
       for p in reversed(car_started_processes):
         if p not in driver_view_processes or not driver_view:
