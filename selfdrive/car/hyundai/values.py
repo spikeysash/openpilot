@@ -35,6 +35,7 @@ class CAR:
   GRANDEUR = "GRANDEUR IG 2017"
   GRANDEUR_HEV = "GRANDEUR IG HEV 2019"
   VELOSTER = "HYUNDAI VELOSTER 2019"
+  TUCSON = "HYUNDAI TUCSON 2020" #NON SCC
 
   # GENESIS
   GENESIS_G70 = "GENESIS G70 2018"
@@ -64,6 +65,9 @@ class Buttons:
 FINGERPRINTS = {
   CAR.ELANTRA: [{
     66: 8, 67: 8, 68: 8, 127: 8, 273: 8, 274: 8, 275: 8, 339: 8, 356: 4, 399: 8, 512: 6, 544: 8, 593: 8, 608: 8, 688: 5, 790: 8, 809: 8, 897: 8, 832: 8, 899: 8, 902: 8, 903: 8, 905: 8, 909: 8, 916: 8, 1040: 8, 1056: 8, 1057: 8, 1078: 4, 1170: 8, 1265: 4, 1280: 1, 1282: 4, 1287: 4, 1290: 8, 1292: 8, 1294: 8, 1312: 8, 1314: 8, 1322: 8, 1345: 8, 1349: 8, 1351: 8, 1353: 8, 1363: 8, 1366: 8, 1367: 8, 1369: 8, 1407: 8, 1415: 8, 1419: 8, 1425: 2, 1427: 6, 1440: 8, 1456: 4, 1472: 8, 1486: 8, 1487: 8, 1491: 8, 1530: 8, 1532: 5, 2001: 8, 2003: 8, 2004: 8, 2009: 8, 2012: 8, 2016: 8, 2017: 8, 2024: 8, 2025: 8
+  }],
+  CAR.TUCSON: [{ # no SCC msgs in this string
+    64: 8, 66: 8, 67: 8, 68: 8, 127: 8, 273: 8, 274: 8, 275: 8, 339: 8, 356: 4, 399: 8, 447: 8, 512: 6, 544: 8, 593: 8, 608: 8, 688: 5, 790: 8, 809: 8, 832: 8, 884: 8, 897: 8, 899: 8, 902: 8, 903: 8, 909: 8, 916: 8, 1040: 8, 1064: 8, 1065: 8, 1078: 4, 1151: 6, 1168: 7, 1170: 8, 1191: 2, 1253: 8, 1254: 8, 1255: 8, 1265: 4, 1280: 1, 1282: 4, 1287: 4, 1292: 8, 1294: 8, 1312: 8, 1313: 8, 1314: 8, 1322: 8, 1342: 6, 1345: 8, 1348: 8, 1349: 8, 1351: 8, 1353: 8, 1363: 8, 1365: 8, 1366: 8, 1367: 8, 1369: 8, 1407: 8, 1415: 8, 1419: 8, 1427: 6, 1440: 8, 1456: 4, 1470: 8, 1472: 8, 1486: 8, 1487: 8, 1491: 8, 1530: 8, 1532: 5, 1952: 8, 1960: 8, 1988: 8, 1996: 8, 2001: 8, 2004: 8, 2009: 8, 2012: 8, 2016: 8, 2017: 8, 2024: 8, 2025: 8
   }],
   CAR.ELANTRA_GT_I30: [{
     66: 8, 67: 8, 68: 8, 127: 8, 128: 8, 129: 8, 273: 8, 274: 8, 275: 8, 339: 8, 354: 3, 356: 4, 399: 8, 512: 6, 544: 8, 593: 8, 608: 8, 688: 5, 790: 8, 809: 8, 832: 8, 884: 8, 897: 8, 899: 8, 902: 8, 903: 8, 905: 8, 909: 8, 916: 8, 1040: 8, 1056: 8, 1057: 8, 1078: 4, 1151: 6, 1168: 7, 1170: 8, 1193: 8, 1265: 4, 1280: 1, 1282: 4, 1287: 4, 1290: 8, 1292: 8, 1294: 8, 1312: 8, 1322: 8, 1342: 6, 1345: 8, 1348: 8, 1349: 8, 1351: 8, 1353: 8, 1356: 8, 1363: 8, 1365: 8, 1366: 8, 1367: 8, 1369: 8, 1407: 8, 1414: 3, 1415: 8, 1419: 8, 1427: 6, 1440: 8, 1456: 4, 1470: 8, 1486: 8, 1487: 8, 1491: 8, 1530: 8, 1952: 8, 1960: 8, 1988: 8, 2000: 8, 2001: 8, 2004: 8, 2005: 8, 2008: 8, 2009: 8, 2012: 8, 2013: 8, 2015: 8, 2016: 8, 2017: 8, 2024: 8, 2025: 8
@@ -188,6 +192,11 @@ FW_VERSIONS = {
       b'\xf1\x8756310-L5500\xf1\x00DN8 MDPS C 1.00 1.02 56310-L5500 4DNHC102\xf1\xa01.02',
     ],
   },
+  CAR.TUCSON: {
+    (Ecu.transmission, 0x7E1, None): [b'\xf1\x87KMLDCU700665TJ20Wwwwh\x88\x98\x89wwwwvfgf\x98w\177\xff\x99\xff\177\xf8\001\xbf\xf1\x816T6G4051\000\000\xf1\0006T6J0_C2\000\0006T6G4051\000\000TTL4G24NH2\000\000\000\000',],
+    (Ecu.fwdCamera, 0x7C4, None): [b'\xf1\000TL  MFC  AT USA LHD 1.00 1.06 95895-D3800 190107',],
+    (Ecu.engine, 0x7E0, None): [b'\xf1\x81606G3051\000\000\000\000\000\000\000\000',],	
+  },
   CAR.SANTA_FE: {
     (Ecu.eps, 0x7d4, None): [b'\xf1\x00TM  MDPS C 1.00 1.00 56340-S2000 8409'],
     (Ecu.engine, 0x7e0, None): [b'\xf1\x81606EA051\x00\x00\x00\x00\x00\x00\x00\x00'],
@@ -262,7 +271,7 @@ CHECKSUM = {
 FEATURES = {
   # which message has the gear
   "use_cluster_gears": set([CAR.SANTA_FE_2017, CAR.ELANTRA, CAR.KONA, CAR.ELANTRA_GT_I30, CAR.KIA_CADENZA, CAR.KIA_NIRO_HEV, CAR.GRANDEUR]),
-  "use_tcu_gears": set([CAR.KIA_OPTIMA, CAR.SONATA_2019, CAR.VELOSTER]),
+  "use_tcu_gears": set([CAR.KIA_OPTIMA, CAR.SONATA_2019, CAR.VELOSTER, CAR.TUCSON]),
 
   # send LFA MFA message for new HKG models
   "send_lfa_mfa": set([CAR.SONATA, CAR.PALISADE, CAR.SONATA_HEV, CAR.SANTA_FE, CAR.KIA_NIRO_EV, CAR.KONA_EV, CAR.KONA,
@@ -297,6 +306,7 @@ DBC = {
   CAR.GRANDEUR_HEV: dbc_dict('hyundai_kia_generic_hybrid', None),
   CAR.PALISADE: dbc_dict('hyundai_kia_generic', None),
   CAR.VELOSTER: dbc_dict('hyundai_kia_generic', None),
+  CAR.TUCSON: dbc_dict('hyundai_kia_generic', None),
 
   CAR.KIA_FORTE: dbc_dict('hyundai_kia_generic', None),
   CAR.KIA_OPTIMA: dbc_dict('hyundai_kia_generic', None),
